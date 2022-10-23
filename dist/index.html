@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFBot Online</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css?eee" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body id="index" bgid="dark" style="background-image: url(images/bg_dark.jpg);">
+	
+    
+    <nav class="navbar mb-3" id="__navbar">
+		<span class="navbar-brand mb-0 h1">SFBot - Online <small>V 1.0</small></span>
+	</nav>
+
+	<div id="__page_loading">
+		<label><i class="bi bi-arrow-repeat"></i></label>
+	</div>
+	
+	<div class="container text-center">
+		<div id="__box_alerts"></div>
+	</div>
+	
+	<div class="container-fluid text-center">
+
+		<div class="row text-center">
+
+			<div class="col text-center">
+				<img src="images/160x600.jpg" class="d-none d-md-inline"/>
+			</div>
+			<div class="col-12 col-md-6">
+
+				<div id="__page_login">
+								
+					<div id="__box_login">
+						<h1> <img src="images/logo.png?asdas"></h1>
+
+						
+							<div class="mb-3">
+								<label for="login" class="form-label">Login</label>
+								<input type="text" name="nick" placeholder="Nick" value="" class="form-control" id="__input_login">
+							</div>
+
+							<div class="mb-3">
+								<label for="server" class="form-label">Password</label>
+								<input name="password" type="password" placeholder="Password" value="" class="form-control" id="__input_pass" aria-describedby="pass">
+							</div>
+
+							<div class="mb-3">
+								<label for="server" class="form-label">Server</label>
+								<input type="text" name="server" placeholder="s1.sfgame.de" value="" class="form-control" id="__input_server" aria-describedby="server">
+								<div id="server" class="form-text">Example: s1.sfgame.de</div>
+							</div>
+							
+							<button type="button"  id="__button_login" class="btn btn-primary">Go...</button>
+						
+					</div>
+				</div>
+
+
+
+
+
+				<div id="__page_user">
+					<div id="__box_user">
+						<button type="button" title="Dark-Light Theme" id="__button_theme" class="btn btn-outline-info"><i class="bi bi-moon-stars"></i></button>
+
+						<div id="__text_nick" class="text-uppercase m-none m-sm-auto"></div> 
+							<span class="badge badge-primary" id="__text_status" >none</span>
+						<label id="__text_status_time">00:00</label>
+
+						<div id="__box_progress_time" class="progress" style="height: 20px;">
+							<div class="progress-bar progress-bar-striped" id="__progress_status" role="progressbar" aria-label="Time" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+
+						<div id="__box_progress_thirst" class="progress" style="height: 20px;">
+							<div class="progress-bar bg-success" id="__progress_thirst" role="progressbar" aria-label="Energy" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Energy</div>
+						</div>
+
+
+						<div id="__box_buttons">
+							<button type="button" id="__button_start" class="btn btn-outline-success"><i class="bi bi-play-btn"></i> Start</button>
+							<button type="button" id="__button_stop" class="btn btn-outline-warning "><i class="bi bi-stop-btn"></i> Stop</button>
+							<button type="button" id="__button_abort" class="btn btn-outline-danger">Abort</button>
+
+							<br>
+
+							<img class="d-inline d-md-none" src="images/250x250.jpg"/>
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-12 col-lg-4">
+							
+								<div class="card border-secondary mb-3">
+									<div class="card-header">Actions:</div>
+									<div class="card-body">
+										<p class="card-text">
+											<div class="row">
+												<div class="col-12 mt-2">
+													<button type="button" id="__button_skip_timeglass" class="btn btn-outline-primary __button_control">Skip <img src="images/icon_hourglass.png"></button>
+												</div>
+												<div class="col-12 mt-2">
+													<button type="button" id="__button_skip_mush" class="btn btn-outline-danger __button_control">Skip <img src="images/icon_mush.png"></button>
+												</div>
+												<div class="col-12 mt-2">
+													<button type="button" id="__button_buy_beer" class="btn btn-outline-light __button_control">Buy Beer <img src="images/icon_beer.png"></button>
+												</div>
+												<div class="col-12 mt-2">
+													<button type="button" id="__button_work_start" class="btn btn-outline-primary __button_control">Start Work</button>
+												</div>
+												<div class="col-12 mt-2">
+													<button type="button" id="__button_logout" class="btn btn-outline-secondary __button_control">Logout</button>
+												</div>
+											</div>
+										</p>
+									</div>
+								</div>
+								
+							</div>
+							<div class="col-12 col-lg-4">
+								
+								<div class="card border-secondary mb-3">
+									<div class="card-header">Settings:</div>
+									<div class="card-body" style="padding: 10px 15px;">
+										Quest Prefer:
+											<fieldset class="form-group">
+
+											<div class="form-check __input_quest" id="__input_quest_exp">
+												<label class="form-check-label">
+												<input type="radio" checked name="__option_quest_prefer" id="__option_quest_exp" class="form-check-input __option_quest_prefer" value="exp">
+													Exp
+												</label>
+											</div>
+											<div class="form-check __input_quest" id="__input_quest_gold">
+												<label class="form-check-label">
+												<input type="radio" name="__option_quest_prefer" id="__option_quest_gold" class="form-check-input __option_quest_prefer" value="gold">
+													Gold
+												</label>
+											</div>
+											<div class="form-check __input_quest" id="__input_quest_time">
+												<label class="form-check-label">
+												<input type="radio" name="__option_quest_prefer" id="__option_quest_time" class="form-check-input __option_quest_prefer" value="time">
+													Time
+												</label>
+											</div>
+											</fieldset>
+									
+									</div>
+								</div>
+								
+							</div>
+							
+
+							<div class="col-12 col-lg-4">
+
+								<ul class="list-group">
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										Mush
+										<span class="badge badge-secondary" style="font-size:12px;"><label id="__text_mush">0</label> <img src="images/icon_mush.png"></span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										TG
+										<span class="badge badge-secondary" style="font-size:12px;"><label id="__text_timeglass">0</label> <img src="images/icon_hourglass.png"></span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										Gold
+										<span class="badge badge-secondary" style="font-size:12px;"><label id="__text_gold">0</label> <img src="images/icon_gold.png"></span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										LvL
+										<span class="badge badge-secondary" style="font-size:12px;" id="__text_lvl">0</span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										Pet
+										<span class="badge badge-secondary" style="font-size:12px;" id="__text_mount">0</span>
+									</li>
+								</ul>
+							</div>
+						
+						</div>
+						
+						<div class="row" style="margin-top:15px">
+							<div class="col-lg-12">
+								<div class="bs-component">
+									<div class="jumbotron" style="padding:0rem 0rem;background-color: #1b1a1a;">
+										<div class="card text-white bg-dark mb-3">
+
+											<div class="card-header">Console</div>
+											<div class="card-body" id="__box_console"></div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col text-center">
+				<img src="images/160x600.jpg" class="d-none d-md-inline"/>
+			</div>
+		</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>
