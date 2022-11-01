@@ -22,7 +22,7 @@ class Socket{
 
             req.c = bot.c;
 
-            var url = "http://192.168.8.189/botapi/?oko=" + JSON.stringify(req);
+            var url = "http://" + this.botaddr + "/botapi/?oko=" + JSON.stringify(req);
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
 
@@ -748,7 +748,7 @@ class Bot {
 }
 
 
-const socket = new Socket("192.168.8.189");
+const socket = new Socket("192.168.8.2");
 const bot = new Bot();
 
 

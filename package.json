@@ -1,7 +1,6 @@
 {
   "name": "www",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack"
@@ -15,5 +14,14 @@
   },
   "dependencies": {
     "jquery": "^3.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaszone0/sfbot_web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lukaszone0/sfbot_web/issues"
+  },
+  "homepage": "https://github.com/lukaszone0/sfbot_web#readme",
+  "description": ""
 }
