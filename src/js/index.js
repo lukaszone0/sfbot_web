@@ -5,6 +5,8 @@ window.$ = window.jQuery = jQuery;
 
 import {calchight, setCookie, getCookie, eraseCookie} from './functions.js';
 
+var CryptoJS = require("crypto-js");
+
 class Socket{
 	constructor(addr){
 		this.botaddr = addr;
@@ -21,6 +23,10 @@ class Socket{
             bot.busy = true;
 
             req.c = bot.c;
+
+			if(req.pass != null){
+				req.pass = CryptoJS.SHA1(req.pass + "ahHoj2woo1eeChiech6ohphoB7Aithoh").toString();
+			}
 
             var url = "http://" + this.botaddr + "/botapi/?oko=" + JSON.stringify(req);
             var xmlhttp = new XMLHttpRequest();
